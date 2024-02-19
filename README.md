@@ -130,7 +130,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  version = "*",
+  version = "3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -138,6 +138,7 @@ return {
   },
   config = function ()
     require('neo-tree').setup {}
+    vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
   end,
 }
 ```
